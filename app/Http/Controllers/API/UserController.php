@@ -15,7 +15,7 @@ class UserController extends Controller
 {
     use PasswordValidationRules;
 
-    
+
     public function login(Request $request){
         try{
             // Validasi Input
@@ -54,8 +54,7 @@ class UserController extends Controller
         }
     }
 
-    public function register(Request $request)
-    {
+    public function register(Request $request){
         try {
             $request->validate([
                 'name' => ['required', 'string', 'max:255'],
@@ -88,5 +87,11 @@ class UserController extends Controller
                 'error' => $error,
             ],'Authentication Failed', 500);
         }
+    }
+
+    public function logout(Request $request){
+        $token = $request->user()->currentAccessToken()->delete();
+
+        return ResponseFormatter::success($token,'Token Revoked');
     }
 }
