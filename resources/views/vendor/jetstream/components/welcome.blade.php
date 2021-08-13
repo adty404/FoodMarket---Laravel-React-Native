@@ -2,7 +2,7 @@
     <div class="p-6">
         <div class="flex items-center">
             <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">
-                <a href="/dashboard/foods">Food</a>
+                <a href="/dashboard/food">Food</a>
             </div>
         </div>
     </div>
