@@ -26,7 +26,7 @@ class UserController extends Controller
             ]);
 
             // Mengecek credentials (login)
-            $credentials = $request(['email', 'password']);
+            $credentials = request(['email', 'password']);
             if(!Auth::attempt($credentials)){
                 return ResponseFormatter::error([
                     'message' => 'Unauthorized'
